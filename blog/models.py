@@ -26,6 +26,9 @@ class Post(models.Model):
         return self.title
 
 
+# we build a comment model for post comments from user
+# then we migrate our model for create table in a database
+
 class Comment(models.Model):
     post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='comments')
     name = models.CharField(max_length=50)
